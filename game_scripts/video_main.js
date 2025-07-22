@@ -3,14 +3,6 @@ sbutton.addEventListener("click", startButtonHandler);
 var rbutton = document.getElementById("returnbutton");
 rbutton.addEventListener("click", returnButtonHandler);
 document.addEventListener('keydown', logKey);
-if (versions){
-    fbutton.addEventListener("click", fastButtonHandler);
-    conbutton.addEventListener("click",conButtonHandler);
-    curbutton.addEventListener("click",curButtonHandler);
-    sgbutton.addEventListener("click",sgButtonHandler);
-    grbutton.addEventListener("click",grButtonHandler);
-    wvbutton.addEventListener("click",wvButtonHandler);
-}
 
 var reset_check = true;
 
@@ -30,14 +22,6 @@ function returnButtonHandler(){
         if(confirm("Returning!")){
             game_object.game_mode = null;
             sbutton.style.display = "block";
-            if (versions){
-                fbutton.style.display = "block";
-                conbutton.style.display = "block";
-                curbutton.style.display = "block";
-                sgbutton.style.display = "block";
-                grbutton.style.display = "block";
-                wvbutton.style.display = "block";
-            }
             rbutton.style.display = "none";
             lcontext = lcanvas.getContext('2d');
             rcontext = rcanvas.getContext('2d');
@@ -60,15 +44,6 @@ function startButtonHandler(){
             game_object.game_mode = 'StartPlay';
             rbutton.style.display = "block";
             game_object.startrun();
-            if (versions){
-                fbutton.style.display = "none";
-                conbutton.style.display = "none";
-                curbutton.style.display = "none";
-                sgbutton.style.display = "none";
-                grbutton.style.display = "none";
-                wvbutton.style.display = "none";
-                
-            }
       }
   }
   function fastButtonHandler(){
@@ -85,7 +60,7 @@ function startButtonHandler(){
             game_group = 1;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
-          
+
       }
   }
   function conButtonHandler(){
@@ -102,7 +77,7 @@ function startButtonHandler(){
             game_group = 2;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
-          
+
       }
   }
   function curButtonHandler(){
@@ -119,7 +94,7 @@ function startButtonHandler(){
             game_group = 3;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
-          
+
       }
   }
   function sgButtonHandler(){
@@ -136,7 +111,7 @@ function startButtonHandler(){
             game_group = 4;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
-          
+
       }
   }
   function grButtonHandler(){
@@ -153,7 +128,7 @@ function startButtonHandler(){
             game_group = 5;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
-          
+
       }
   }
   function wvButtonHandler(){
@@ -170,7 +145,7 @@ function startButtonHandler(){
             game_group = 6;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
-          
+
       }
   }
 
