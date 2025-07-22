@@ -1,13 +1,6 @@
 class game{
     constructor(play_time = 40, camera_port = 0){        //camera_port = 0   // TO CHANGE
-        // pygame.init()
-        // this.win_sound = [pygame.mixer.Sound(resource_path("Sounds/pop1.wav")),
-        //                   pygame.mixer.Sound(resource_path("Sounds/pop4.wav")),
-        //                   pygame.mixer.Sound(resource_path("Sounds/pop6.wav"))]
-        // this.error_sound = pygame.mixer.Sound(resource_path("Sounds/boom1.wav"))
 
-        this.win_sound = [win1, win2, win3];
-        this.error_sound = err;
 
         // pygame.font.init()
         // all_fonts = pygame.font.get_fonts()
@@ -327,24 +320,6 @@ class game{
                 resetobstacle_count = true;
                 new_marker_no = o.new_marker_no;
                 this.display_score = 1;
-
-                // Sound effects
-                if (o.obstacle_type == 'Exploding'){
-                    try {
-                        this.error_sound.play();
-                    }
-                    catch {}
-                }
-
-                
-                else{
-                    let sound_no = Math.floor(addscore/10);
-                    // console.log(sound_no);
-                    try{
-                        this.win_sound[sound_no].play();
-                    }
-                    catch {}
-                }
             }
 
             // Check if marker left the screen, if this happens, reset obstacle count
