@@ -1,5 +1,7 @@
 var sbutton = document.getElementById("startbutton");
 sbutton.addEventListener("click", startButtonHandler);
+var rbutton = document.getElementById("returnbutton");
+rbutton.addEventListener("click", returnButtonHandler);
 document.addEventListener('keydown', logKey);
 
 var reset_check = true;
@@ -13,6 +15,25 @@ function logKey(e) {
 
 }
 
+function returnButtonHandler(){
+    if (game_object != null){
+        game_object.crashed = true;
+        reset_check = true
+        if(confirm("Returning!")){
+            game_object.game_mode = null;
+            sbutton.style.display = "block";
+            rbutton.style.display = "none";
+            lcontext = lcanvas.getContext('2d');
+            rcontext = rcanvas.getContext('2d');
+            lcontext.clearRect(0,0, lcanvas.width, lcanvas.height);
+            rcontext.clearRect(0,0, rcanvas.width, rcanvas.height);
+
+        }else{
+            game_object.crashed = false;
+        }
+    }
+}
+
 
 var game_group = 0; // Default initialization
 function startButtonHandler(){
@@ -21,6 +42,7 @@ function startButtonHandler(){
             game_group = 0;
             sbutton.style.display = "none";
             game_object.game_mode = 'StartPlay';
+            rbutton.style.display = "block";
             game_object.startrun();
       }
   }
@@ -34,6 +56,7 @@ function startButtonHandler(){
             sgbutton.style.display = "none";
             grbutton.style.display = "none";
             wvbutton.style.display = "none";
+            rbutton.style.display = "block";
             game_group = 1;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
@@ -50,6 +73,7 @@ function startButtonHandler(){
             sgbutton.style.display = "none";
             grbutton.style.display = "none";
             wvbutton.style.display = "none";
+            rbutton.style.display = "block";
             game_group = 2;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
@@ -66,6 +90,7 @@ function startButtonHandler(){
             sgbutton.style.display = "none";
             grbutton.style.display = "none";
             wvbutton.style.display = "none";
+            rbutton.style.display = "block";
             game_group = 3;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
@@ -82,6 +107,7 @@ function startButtonHandler(){
             sgbutton.style.display = "none";
             grbutton.style.display = "none";
             wvbutton.style.display = "none";
+            rbutton.style.display = "block";
             game_group = 4;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
@@ -98,6 +124,7 @@ function startButtonHandler(){
             sgbutton.style.display = "none";
             grbutton.style.display = "none";
             wvbutton.style.display = "none";
+            rbutton.style.display = "block";
             game_group = 5;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();
@@ -114,6 +141,7 @@ function startButtonHandler(){
             sgbutton.style.display = "none";
             grbutton.style.display = "none";
             wvbutton.style.display = "none";
+            rbutton.style.display = "block";
             game_group = 6;
             game_object.game_mode = 'StartPlay';
             game_object.startrun();

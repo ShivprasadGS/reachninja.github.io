@@ -48,12 +48,3 @@ body {
   margin-bottom: 20px;
   max-width: 640px;
 }
-
-.game-bounding-box {
-  border: 3px solid #A7D2CB;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 8px;
-  background: white;
-  display: inline-block;
-}

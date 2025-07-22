@@ -3,6 +3,8 @@
 // (https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
 var video = document.getElementById("videoInput"); // video is the id of video tag
 // var gameCanvas = document.getElementById("gameCanvas");
+var lcanvas = document.getElementById("leftCanvas");
+var rcanvas = document.getElementById("rightCanvas");
 
 var elem = document.documentElement;
 var instr_box = document.getElementById("instructions");
@@ -259,12 +261,12 @@ function resetDisplaySize(){
     video.height = display_height; video.width = display_width;
     gameCanvas.setAttribute("style", style_line);
     style_line = "z-index:1; width: " + (window_width - display_width - 32)/2   + "px; height:" + display_height + "px;";
-    // lcanvas.setAttribute("style", style_line);
-    // rcanvas.setAttribute("style", style_line);
-    // lctx = lcanvas.getContext("2d");
-    // lctx.font = getFont(lcanvas);
-    // rctx = rcanvas.getContext("2d");
-    // rctx.font = getFont(rcanvas);
+    lcanvas.setAttribute("style", style_line);
+    rcanvas.setAttribute("style", style_line);
+    lctx = lcanvas.getContext("2d");
+    lctx.font = getFont(lcanvas);
+    rctx = rcanvas.getContext("2d");
+    rctx.font = getFont(rcanvas);
     gameshape = [actual_width, actual_height];
     // style_line = "z-index:2; position:absolute; top:" +   + "; left:"  +  ;
     // sbutton.setAttribute("style",style_line);
@@ -276,7 +278,13 @@ function resetDisplaySize(){
         top = val + "px";
     }
 
-    // Remove all logic and references to returnbutton or rbutton
+    with(rbutton.style) {
+        let val = ((window_width - display_width)/4 - rbutton.clientWidth/2);
+        left = val + "px" ;
+        // console.log(sbutton.clientHeight, left);
+        val = (display_height/2 + 9*rbutton.clientHeight);
+        top = val + "px";
+    }
 }
 
 
