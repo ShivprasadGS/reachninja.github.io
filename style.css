@@ -40,3 +40,9 @@ body {
 .btn-group button:hover {
   background-color: #82C3B6;
 }
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
