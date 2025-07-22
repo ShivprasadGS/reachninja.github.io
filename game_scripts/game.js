@@ -1,5 +1,25 @@
 class game{
-    constructor(play_time = 40, camera_port = 0){
+    constructor(play_time = 40, camera_port = 0){        //camera_port = 0   // TO CHANGE
+        // pygame.init()
+        // this.win_sound = [pygame.mixer.Sound(resource_path("Sounds/pop1.wav")),
+        //                   pygame.mixer.Sound(resource_path("Sounds/pop4.wav")),
+        //                   pygame.mixer.Sound(resource_path("Sounds/pop6.wav"))]
+        // this.error_sound = pygame.mixer.Sound(resource_path("Sounds/boom1.wav"))
+
+        this.win_sound = [win1, win2, win3];
+        this.error_sound = err;
+
+        // pygame.font.init()
+        // all_fonts = pygame.font.get_fonts()
+        // this.textsize ={"large": pygame.font.SysFont(all_fonts[3], 200),
+        //                 "medium": pygame.font.SysFont(all_fonts[3], 100),
+        //                 "mid":pygame.font.SysFont(all_fonts[3],60),
+        //                 "small": pygame.font.SysFont(all_fonts[3], 40),
+        //                 "tiny": pygame.font.SysFont(all_fonts[3], 33)}
+        // this.textsize = {"large": pygame.font.Font('freesansbold.ttf',200),
+        //             "medium": pygame.font.Font('freesansbold.ttf',100),
+        //             "small":pygame.font.Font('freesansbold.ttf',40),
+        //             "tiny": pygame.font.Font('freesansbold.ttf',20)}
 
         this.textcolor = {"gray":   (100,100,100),
                           "white":  (255,255,255),
