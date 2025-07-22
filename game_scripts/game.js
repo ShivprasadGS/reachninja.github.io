@@ -249,50 +249,16 @@ class game{
         drawBG();           // Draw on canvas
 
         if (this.player.checkObservable(getTimeS())) {  // If the player should be visible on screen
-            // console.log(this.player.loc);
             this.drawCircle(this.player);
-            // console.log('player', this.player.loc);
-        }            
+        }
 
         for (var c = 0; c<this.curr_obstacle.length; c++){ //For each obstacle
             this.drawCircle(this.curr_obstacle[c]);
-            // console.log(this.curr_obstacle[c].shape, this.curr_obstacle[c].loc);
-        }
-        
-        
-        // Redraw score canvas (left)
-        clearCanvas(scoreCanvas);   
-        var score_line = "Score:";
-        var text_size = "50px";
-
-        // if (this.tracking_type = "Video"){
-        //     var text_size = "50px";
-        // }
-        // else{
-        //     var text_size = "30px";
-        // }
-
-        this.writeOnCanvas(scoreCanvas, score_line, [scoreCanvas.width/2-75, scoreCanvas.height/2-50], "gray", text_size);
-        score_line = this.player.score;
-        this.writeOnCanvas(scoreCanvas, score_line, [scoreCanvas.width/2-20, scoreCanvas.height/2+50], "gray", text_size);
-
-        // Redraw time cnvas (right)        
-        clearCanvas(timeCanvas);
-        var time_line = "Time:";
-        this.writeOnCanvas(timeCanvas, time_line, [timeCanvas.width/2-75, timeCanvas.height/2-50], "gray", text_size);
-        time_line = Math.ceil(this.play_time - (this.curr_time - this.player.start_time));
-        this.writeOnCanvas(timeCanvas, time_line, [timeCanvas.width/2-20, timeCanvas.height/2+50], "gray", text_size);
-
-        if (tracking_type == "Video"){  // Video framerate is slower
-            var disp_frames = 10;   
-        }
-        else{
-            var disp_frames = 30;
         }
 
-        
-        // If player has a change in score, score is displayed on screen for a few timesteps
-        if (this.display_score > 0 && this.display_score <= disp_frames){
+        // Remove scoreCanvas and timeCanvas logic
+        // Only keep display_score logic for gameCanvas if needed
+        if (this.display_score > 0){
             var score_change = this.player.score - this.old_score;
             var dispmsg = Math.ceil(score_change);
             if (score_change < 0){
@@ -300,9 +266,8 @@ class game{
             }
             this.writeOnCanvas(gameCanvas,dispmsg, this.player.loc, "black", "25px");
             this.display_score += 1;
-            if (this.display_score >= disp_frames){
+            if (this.display_score >= 10){ // default to 10 frames
                 this.old_score = this.player.score;
-                // console.log('score updated')
                 this.display_score = 0;
             }
         }
