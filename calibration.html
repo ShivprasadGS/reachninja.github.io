@@ -1,43 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Reach Ninja Calibration</title>
-    <style>
-        .box {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Reach Ninja Calibration</title>
+  <style>
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 25px;
+    }
+    .btn-group button {
+      background-color: #39AEB9;
+      border-width: 3px;
+      border-color: #1D585E;
+      margin: 16px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 24px;
+      cursor: pointer;
+      width: 400px;
+      display: block;
+    }
+    .btn-group button:hover {
+      background-color: #1D585E;
+    }
+  </style>
 </head>
 
-<body style="background-color: #F4F1ED;">
-
-<div class="box" style="justify-content: center; align-items: center;">
-  <input id="startbutton" type="button" style="z-index:2; position: absolute; top:-5px; left:-5px; font-size : 20px;" value="Start Game"/>
-  <div class="game-bounding-box" style="border: 3px solid #A7D2CB; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 8px; background: white; display: inline-block;">
-    <canvas id="gameCanvas" width="640" height="480" style="z-index:1; display: block; background: white;"></canvas>
+<body>
+  <div class="box">
+    <div class="instruction-box">
+      <h3>Calibration Instructions</h3>
+      <ol>
+        <li>To perform calibration, user needs to provide webcam access. Once you click on <b>Perform Calibration</b>, you accept to allow webcam access.</li>
+        <li>After clicking on <b>Perform Calibration</b>, wait for the video feed to load.</li>
+        <li>Once the video has loaded, hold up a high contrast spherical object (e.g., tennis ball, tomato) and click directly on the object in the video feed to begin tracking.</li>
+        <li>A blue dot will track the object you selected.</li>
+        <li>If tracking is inaccurate, click "Redo" and try again.</li>
+        <li>Click "Start Game" when you're satisfied.</li>
+      </ol>
+    </div>
   </div>
-</div>
 
-<div style="display: none; height: 10px;">
-<video id="videoInput" width="640" height="480" style="display:none;">
-  Your browser does not support the video tag.
-</video>
-</div>
+  <div class="box">
+    <div class="btn-group">
+      <button id="perform_calibration">Perform Calibration</button>
+    </div>
+  </div>
 
-<script src="game_scripts/opencv.js" type="text/javascript"></script>
-<script src="game_scripts/background.js"></script>
-<script src="game_scripts/marker.js"></script>
-<script src="game_scripts/obstacles.js"></script>
-<script src="game_scripts/player.js"></script>
-<script src="game_scripts/game.js"></script>
-<script src="game_scripts/video_setup.js"></script>
-<script src="game_scripts/video_main.js"></script>
-
+  <script type="text/javascript">
+    document.getElementById("perform_calibration").onclick = function() {
+      location.href = "https://shivprasadgs.github.io/reachninja.github.io/game";
+    }
+  </script>
 
 </body>
-
-
 </html>
+

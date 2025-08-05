@@ -65,10 +65,10 @@
         ctx.clearRect(0, 0, instrcanvas.width, instrcanvas.height);
         ctx.font = "16px Arial";
         ctx.textAlign = 'center';
-        ctx.fillText("Reach Ninja Demo: Maximize your total score!", instwidth/2, 20)
-        ctx.fillText("Hold up a high contrast spherical tracking object and click on it. It will be tracked in blue. Click on start game when ready.", instwidth/2, 60)
-        ctx.fillText("Seeing how it works: Use the right hand video to click on the high contrast spherical tracking object. Click on start game when ready.", instwidth/2, 80)
-        ctx.fillText("Note that no data is recorded at any time including gameplay or webcam video.", instwidth/2, 120)
+        ctx.fillText("If you are a first time user, please go over the ''See how it works!'' section before proceeding to the ''Play Game'' section.", instwidth/2, 20)
+        ctx.fillText("See how it works!: It explains how to setup and play the game, and also provides a demonstration video.", instwidth/2, 60)
+        ctx.fillText("Play Game: You will first calibrate the object and then play the game as instructed in ''See how it works!'' section.", instwidth/2, 90)
+        ctx.fillText("Disclaimer: Note that no data is recorded at any time including gameplay or webcam video.", instwidth/2, 150)
         inst_on = true;
       }
     }
@@ -76,7 +76,7 @@
       location.href = "https://shivprasadgs.github.io/reachninja.github.io/demo";
     }
     document.getElementById("game").onclick = function() {
-      location.href = "https://shivprasadgs.github.io/reachninja.github.io/game";
+      location.href = "https://shivprasadgs.github.io/reachninja.github.io/calibration";
     }
   </script>
 
