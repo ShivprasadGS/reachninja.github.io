@@ -2,22 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Reach Ninja Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Reach Ninja Homepage</title>
+  <style>
+        .box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: 25px;
+        }
+        .btn-group button {
+          background-color: #39AEB9; /* Green background */
+          border-width: 3px;
+          border-color: #1D585E;
+          margin: 16px;
+          color: white; /* White text */
+          font-size: 20px;
+          font-weight: bold;
+          padding: 10px 24px; /* Some padding */
+          cursor: pointer; /* Pointer/hand icon */
+          width: 400px; /* Set a width if needed */
+          display: block; /* Make the buttons appear below each other */
+        }
+
+        /* Add a background color on hover */
+        .btn-group button:hover {
+          background-color: #1D585E;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="box">
     <div class="btn-group">
       <button id="instructions">Instructions</button>
-      <button id="demo">See how it works</button>
+      <button id="demo">See how it works!</button>
       <button id="game">Play Game</button>
     </div>
   </div>
 
+  <div class = box>
+    <div>
+        <canvas id="instruction_canvas" width="1000" height="300"
+        style="z-index:1">
+        Your browser does not support the canvas element.
+        </canvas>
+    </div>
+  </div>
+
   <script type="text/javascript">
+    var inst_on = false;
     document.getElementById("instructions").onclick = function() {
-      location.href = "https://shivprasadgs.github.io/reachninja.github.io/instructions";
+      var instrcanvas = document.getElementById("instruction_canvas");
+      var instwidth = instrcanvas.width;
+      var ctx = instrcanvas.getContext("2d");
+
+      if (inst_on){
+        instrcanvas.hidden = true;
+        inst_on = false;
+      }
+      else{
+        instrcanvas.hidden = false;
+        ctx.clearRect(0, 0, instrcanvas.width, instrcanvas.height);
+        ctx.font = "16px Arial";
+        ctx.textAlign = 'center';
+        ctx.fillText("Reach Ninja Demo: Maximize your total score!", instwidth/2, 20)
+        ctx.fillText("Hold up a high contrast spherical tracking object and click on it. It will be tracked in blue. Click on start game when ready.", instwidth/2, 60)
+        ctx.fillText("Seeing how it works: Use the right hand video to click on the high contrast spherical tracking object. Click on start game when ready.", instwidth/2, 80)
+        ctx.fillText("Note that no data is recorded at any time including gameplay or webcam video.", instwidth/2, 120)
+        inst_on = true;
+      }
     }
     document.getElementById("demo").onclick = function() {
       location.href = "https://shivprasadgs.github.io/reachninja.github.io/demo";

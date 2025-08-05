@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reach Ninja - How it works?</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    ol {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    ul li a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .demo-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 1rem auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+
+<main>
+
+  <section id="instructions">
+    <h2> ▶ How to Play?</h2>
+
+    <ol>
+      <li><strong>Requirements:</strong><br/>
+        You must have a webcam and a bright-colored spherical object (like a tennis ball) with a light-colored background (with constant lighting)
+        for the best contrast. There should be no obstructions within a <strong>3 feet</strong> radius (other than a computer) around you to avoid collisions with the surrounding.
+      </li>
+
+      <li><strong>Camera Setup:</strong><br/>
+        Make sure your webcam is connected and functioning properly. Position yourself about <strong>2.5 feet</strong> from the webcam such that your hand holding the bright-colored spherical
+        object is clearly visible.
+      </li>
+
+      <li><strong>Calibration Phase:</strong><br/>
+        Click the <em>"Play Game"</em> button to begin. You will be prompted with the screen with instructions on how to calibrate the bright-colored spherical object for detection.
+        This calibration helps in detecting the object accurately during the gameplay.
+      </li>
+
+      <li><strong>Starting the Game:</strong><br/>
+        Once calibration is done, click the <em>"Start Game"</em> button to begin the game window. The game will track the calibrated object in your hand and
+        display it on the screen as a <em>"Red Ball"</em>.
+      </li>
+
+      <li><strong>Controlling the Red Ball:</strong><br/>
+        To move the <em>"Red Ball"</em> on the game window, move the calibrated object in your hand in front of the webcam, as parallel to the screen as possible for the best results.
+      </li>
+
+      <li><strong>Gameplay Objective:</strong><br/>
+        You will see a <em>"Blue Balls"</em> and <em>"Black Balls"</em> on the screen. The objective of the game is to reach the <em>"Red Ball"</em> to the <em>"Blue Ball"</em> as
+        quickly as possible while avoiding collision with the <em>"Black Balls"</em>.
+        The game will start a timer as soon as you click the <em>"Start Game"</em> button.
+      </li>
+
+      <li><strong>End of the Game:</strong><br/>
+        The game ends after the timer ends and your final score will be displayed on the screen.
+      </li>
+    </ol>
+  </section>
+
+  <section id="demos">
+    <h2>🎥 Demo Videos</h2>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <video width="560" height="315" controls style="display:block; max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        <source src="gameplay/gameplay_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
