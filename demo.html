@@ -2,97 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reach Ninja - How it works?</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 25px;
     }
-
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .btn-group button {
+      background-color: #39AEB9;
+      border-width: 3px;
+      border-color: #1D585E;
+      margin: 16px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 24px;
+      cursor: pointer;
+      width: 400px;
+      display: block;
     }
-
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
+    .btn-group button:hover {
+      background-color: #1D585E;
     }
-
-    section {
+    .instruction-box {
       background: #fff;
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 2rem;
-    }
-
-    h1, h2 {
-      margin-top: 0;
-    }
-
-    ol {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1rem;
-    }
-
-    ul li a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-
-    ul li a:hover {
-      text-decoration: underline;
-    }
-
-    iframe {
-      display: block;
-      margin: 1.5rem auto;
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-
-    .demo-image {
-      width: 100%;
       max-width: 800px;
       margin: 1rem auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
     }
   </style>
 </head>
+
+
 <body>
-
-
-<main>
-
-  <section id="instructions">
-    <h2> ▶ How to Play?</h2>
+    <div class="box">
+    <div class="instruction-box">
+      <h2> ▶ How to Play?</h2>
 
     <ol>
       <li><strong>Requirements:</strong><br/>
@@ -130,20 +79,19 @@
         The game ends after the timer ends and your final score will be displayed on the screen.
       </li>
     </ol>
-  </section>
-
-  <section id="demos">
-    <h2>🎥 Demo Videos</h2>
-
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <video width="560" height="315" controls style="display:block; max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
-        <source src="gameplay/gameplay_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
     </div>
-  </section>
+  </div>
 
-</main>
-
+    <div class="box">
+        <div class="instruction-box">
+          <h2>🎥 Demo Videos</h2>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <video width="560" height="315" controls style="display:block; max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                <source src="gameplay/gameplay_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+        </div>
+      </div>
 </body>
 </html>
