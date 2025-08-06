@@ -1,6 +1,10 @@
-
+document.body.style.backgroundColor = "black";
 let gameCanvas = document.getElementById("gameCanvas");
 let ctx = gameCanvas.getContext("2d");
+let scoreCanvas = document.getElementById("leftCanvas");
+let sc_ctx = scoreCanvas.getContext("2d");
+let timeCanvas = document.getElementById("rightCanvas");
+let tm_ctx = timeCanvas.getContext("2d");
 
 function getTimeS(){
     var d = new Date();
@@ -15,7 +19,6 @@ function clearCanvas(curr_canvas, fill_color = "black"){
     }
 
 function drawBG() {
-    // Make the gameCanvas background white
     ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
@@ -31,8 +34,6 @@ function norm(val_og_array){
 }
 
 function arraySum(og_array1, og_array2){
-
-    // // console.log(og_array1); // console.log(og_array2);
     if (og_array1.length != og_array2.length){console.log("og_array sum error"); return 0;}
     var sum = new Array();
     sum[0]=undefined;
@@ -44,7 +45,6 @@ function arraySum(og_array1, og_array2){
 }
 
 function scaleArray(og_array,scalar){
-    // console.log(og_array,scalar);
     var newog_array = new Array();
     newog_array[0] = undefined;
     newog_array.length = og_array.length;
@@ -59,10 +59,9 @@ function clamp(num, min, max) {
 }
 
 function arrayClamp(og_array, min, max) {
-    // // console.log(og_array, min, max);
     for(c = 0; c < og_array.length; c++){
         num = og_array[c];
-        og_array[c] = clamp(num, min, max); //(num <= min ? min : num >= max ? max : num);
+        og_array[c] = clamp(num, min, max);
     }
     return og_array;
 }

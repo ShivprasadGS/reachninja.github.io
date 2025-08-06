@@ -1,19 +1,5 @@
 class game{
-    constructor(play_time = 40, camera_port = 0){        //camera_port = 0   // TO CHANGE
-
-
-        // pygame.font.init()
-        // all_fonts = pygame.font.get_fonts()
-        // this.textsize ={"large": pygame.font.SysFont(all_fonts[3], 200),
-        //                 "medium": pygame.font.SysFont(all_fonts[3], 100),
-        //                 "mid":pygame.font.SysFont(all_fonts[3],60),
-        //                 "small": pygame.font.SysFont(all_fonts[3], 40),
-        //                 "tiny": pygame.font.SysFont(all_fonts[3], 33)}
-        // this.textsize = {"large": pygame.font.Font('freesansbold.ttf',200),
-        //             "medium": pygame.font.Font('freesansbold.ttf',100),
-        //             "small":pygame.font.Font('freesansbold.ttf',40),
-        //             "tiny": pygame.font.Font('freesansbold.ttf',20)}
-
+    constructor(play_time = 40, camera_port = 0){
         this.textcolor = {"gray":   (100,100,100),
                           "white":  (255,255,255),
                           "black":  (0,0,0),
@@ -32,11 +18,7 @@ class game{
         this.display_score = 0;
         this.old_score = 0;
         this.saveframe = false;
-        // this.game_params = {"exploding_perc" : 0.33, "max_unobs_time" : 1, "max_obs_time" : 1, 
-        //                         "vel_max" : 1, "vel_min" : 0.5, "acc" : 100, "theta_max" : -30, "theta_min" : -90,
-        //                         "min_obstacles" : 1, "max_obstacles" : 4, "damping" : 0, "mirror" : false, "magnetic_coef" : 1000 }
-        // null; // json.load(open(resource_path('JsonFiles/Player_3/GameParams.json'),'r'));
-        this.game_params = {"exploding_perc" : 0.33, "max_unobs_time" : 0, "max_obs_time" : 1, 
+        this.game_params = {"exploding_perc" : 0.33, "max_unobs_time" : 0, "max_obs_time" : 1,
                                 "vel_max" : 1, "vel_min" : 0.5, "acc" : 100, "theta_max" : -30, "theta_min" : -90,
                                 "min_obstacles" : 1, "max_obstacles" : 4, "damping" : 0, "mirror" : false, "magnetic_coef" : 0}
         this.initializeGameType();
@@ -53,7 +35,6 @@ class game{
         this.damping = damping; //0 // 0.5 // -0.5
         var scale_mat = [[1,0],[0,1]];
         this.damping_mat = scaleMatrix(scale_mat,this.damping);
-        // this.damping_mat = this.damping*np.array(((-1, -1),(-1, 1)));
         this.player.resetDamping(this.damping, old_loc_wt = 0.3, new_loc_wt = 0.7) // Setting equal weightage to actual location && predicted location to allow damping effect
     }
 
@@ -72,7 +53,6 @@ class game{
         this.damping = this.game_params["damping"]; // 0.5 // -0.5
         var scale_mat = [[1,0],[0,1]];
         this.damping_mat = scaleMatrix(scale_mat,this.damping);
-        // this.damping_mat = this.damping*np.array(((-1, -1),(-1, 1)))
         this.mirror = this.game_params["mirror"];
         this.magnetic_coef = this.game_params["magnetic_coef"];
         
@@ -86,55 +66,8 @@ class game{
     }
 
     initializeGameFrame(){
-        // Function to initialilze the game screen size - background etc.
         drawBG()
         console.log("Screen size is: width=", gameCanvas.width," height=", gameCanvas.height);
-
-
-        // this.video_capture = cv2.VideoCapture(this.camera_port)
-        
-        //// For windows
-        // root = tk.Tk()
-        // screen_width = root.winfo_screenwidth()
-        // screen_height = root.winfo_screenheight()
-        // this.screen_size_tuple = (screen_width, screen_height)
-        // this.game_display = pygame.display.set_mode(this.screen_size_tuple)
-
-        //// For Linux || Mac (?)
-        // this.game_display = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-        // screen_width = pygame.display.Info().current_w
-        // screen_height = pygame.display.Info().current_h
-        // this.screen_size_tuple = (screen_width, screen_height)
-
-        // console.log(f"Width is {screen_width} && height is {screen_height}")
-
-        // frame_width = int(this.video_capture.get(cv2.CAP_PROP_FRAME_WIDTH))
-        // frame_height = int(this.video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        
-        // console.log(f"Width is {frame_width} && height is {frame_height}")
-        
-        
-        // this.original_frame_tuple = (frame_width, frame_height)
-        // this.aspectratio = this.original_frame_tuple[0]/this.original_frame_tuple[1]//frame_width/frame_height
-        // // console.log(f'aspect ratio {this.aspectratio}')
-        // this.frame_size_tuple = (int(this.screen_size_tuple[1]*this.aspectratio),this.screen_size_tuple[1])
-
-        // this.width_ratio = this.original_frame_tuple[0]/(this.screen_size_tuple[1]*this.aspectratio)
-        // this.height_ratio = this.original_frame_tuple[1]/this.screen_size_tuple[1]
-        // // console.log(f'Width ratio is {this.width_ratio}, height ratio is {this.height_ratio}')
-        // this.frame_offset = int((this.screen_size_tuple[0] - int(this.screen_size_tuple[1]*this.aspectratio))/2)
-
-        // this.scaling_factor = 1/this.height_ratio
-
-        // this.calibrate_button = pygame.Rect(this.frame_offset + this.frame_size_tuple[0]/5, np.round(2.5*this.frame_size_tuple[1]/4), this.frame_size_tuple[0]/5, this.frame_size_tuple[0]/15)
-        // this.start_button = pygame.Rect(this.frame_offset + 3*this.frame_size_tuple[0]/5, np.round(2.5*this.frame_size_tuple[1]/4), this.frame_size_tuple[0]/5, this.frame_size_tuple[0]/15)
-        // this.test_button = pygame.Rect(this.frame_offset + 2*this.frame_size_tuple[0]/5, 3*this.frame_size_tuple[1]/4, this.frame_size_tuple[0]/5, this.frame_size_tuple[0]/15)
-        
-        // this.button_color = (this.textcolor["grey"]
-        // this.player_id_textbox = pygame.Rect(100, 100, 50, 50)
-        // this.textbox_color = (255,255,255)
-
-        // pygame.display.set_caption('Reach Ninja')
     }
 
     setGameID(){
@@ -144,8 +77,6 @@ class game{
     }
 
     startrun(){
-        // 0: Base, default; 1: Fast movement; 2: Control with MFPF; 3: Curriculum with MFPF; 4: Single Blue; 5: Grouped; 6: Waves
-        // var game_group = 6;
         this.current_game_type = "Control";
 
         if (game_group == 0){
@@ -165,34 +96,21 @@ class game{
         }else{
             console.log("This shouldn't be happening.")
         }
-
-        // this.current_game_type = 'Control'
-        // clock = pygame.time.Clock()
         
         this.crashed = false;
-        // this.game_mode = null;
-        // key = cv2.waitKey(1)
-        // key = key & 0xFF
 
         var player_id = 3;
         console.log(player_id);
         console.log('in game ', player_id, game_group)
-        // var gameshape = [gameCanvas.width, gameCanvas.height];
         console.log(gameshape);
         this.player = new player(gameshape, this.damping, this.mirror, player_id, 0, 1);
-        
-        
+
         this.init_line = "Screen: " + gameshape;
-        // this.gamelog = Gamelog(this.player, this.game_id)
-        // this.gamelog = new gamelog(this.player, this.game_id);
-        
-        
+
     }
-    /////////////////////////
+
     run(){
         this.sendlog = false;
-        // console.log(this.game_mode);
-        // console.log(this.player.id);
         if (this.game_mode == 'StartPlay' && this.player.start_time == -1){
             // Check for more than 40 attempts
             if (this.player.attempt >= 40){
@@ -208,40 +126,27 @@ class game{
                 this.check_targets = false;
                 this.current_time = getTimeS();
                 this.initializeNewGame();
-                this.tracking_type = tracking_type; // Mouse or Video
-                this.intervention = 0;              // This is to signify type of game curriculum, right now we only have one curriculum running, so set to 0
-                // this.gamelog.newGameLog(this.player.attempt, this.init_line)
+                this.tracking_type = tracking_type;
+                this.intervention = 0;
             }
         }
 
         else if (this.game_mode == 'InPlay' && (getTimeS() - this.player.start_time) <= this.play_time){
             this.current_time = getTimeS();
-            this.saveframe = false;//InPlay      // NEED TO CHANGE THIS BACK TO TRUE TO SAVE IMAGES
+            this.saveframe = false;         //InPlay// NEED TO CHANGE THIS BACK TO TRUE TO SAVE IMAGES
             this.updateGameFrame();
-            // this.updateGamelog();
         }
             
         else if (this.game_mode == 'InPlay'){
             this.game_mode = null;
             this.saveframe = false;
-            // pygame.time.delay(2000);
-            // setTimeout(() => {
-            //   console.log("Waited 2000 ms");
-            // }, 2000);
             this.player.setStartTime();
-            // console.log(this.gamelog.datalog);
-            // this.sendData();
 
             alert("Your score is " + this.player.score)
 
             this.sendlog = true;
             this.crashed = true;
         }
-
-        // if (this.crashed == true){
-            
-            
-        // }
     }
 
     updateGameFrame(){
@@ -256,9 +161,29 @@ class game{
             this.drawCircle(this.curr_obstacle[c]);
         }
 
-        // Remove scoreCanvas and timeCanvas logic
+        clearCanvas(scoreCanvas);
+        var score_line = "Score:";
+        var text_size = "50px";
+
+        this.writeOnCanvas(scoreCanvas, score_line, [scoreCanvas.width/2-75, scoreCanvas.height/2-50], "gray", text_size);
+        score_line = this.player.score;
+        this.writeOnCanvas(scoreCanvas, score_line, [scoreCanvas.width/2-20, scoreCanvas.height/2+50], "gray", text_size);
+
+        clearCanvas(timeCanvas);
+        var time_line = "Time:";
+        this.writeOnCanvas(timeCanvas, time_line, [timeCanvas.width/2-75, timeCanvas.height/2-50], "gray", text_size);
+        time_line = Math.ceil(this.play_time - (this.curr_time - this.player.start_time));
+        this.writeOnCanvas(timeCanvas, time_line, [timeCanvas.width/2-20, timeCanvas.height/2+50], "gray", text_size);
+
+        if (tracking_type == "Video"){  // Video framerate is slower
+            var disp_frames = 10;
+        }
+        else{
+            var disp_frames = 30;
+        }
+
         // Only keep display_score logic for gameCanvas if needed
-        if (this.display_score > 0){
+        if (this.display_score > 0 && this.display_score <= disp_frames){
             var score_change = this.player.score - this.old_score;
             var dispmsg = Math.ceil(score_change);
             if (score_change < 0){
