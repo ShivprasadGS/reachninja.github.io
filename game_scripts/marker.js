@@ -2,6 +2,7 @@ class marker{
     constructor(markertype = 'Unlabeled'){
         this.min_radius = 7; //5;
         this.max_radius = 8; //10;
+        this.const_radius = 8
         this.perc_obs = 0;
         this.max_unobs_time = 0;
         this.max_obs_time = 1;
@@ -13,7 +14,8 @@ class marker{
 
     resetMarker(marker_type = 'Unlabeled'){
         this.type = marker_type;
-        this.setRadius(Math.floor(Math.random()*(this.max_radius+1 - this.min_radius) + this.min_radius));
+        this.setRadius(Math.floor(this.const_radius));
+        //this.setRadius(Math.floor(Math.random()*(this.max_radius+1 - this.min_radius) + this.min_radius));
         this.setObservable();
         this.setStartTime();
         this.obs_start = getTimeS();
