@@ -197,8 +197,16 @@ function rungame(){
     // console.log(arraypt, center);
     arraypt = scaleArray(arraypt, actual_width/red_width);
     
-    arraypt[0] = actual_width - arraypt[0];
+    //arraypt[0] = actual_width - arraypt[0];
     // console.log(arraypt);
+
+    // logic to add the ball reversion logic
+    if (game_object && game_object.player && (getTimeS() - game_object.player.start_time) <= 10) {
+        arraypt[0] = actual_width - arraypt[0];
+    }
+    if (game_object && game_object.player && (getTimeS() - game_object.player.start_time) >= 10) {
+        arraypt[1] = actual_width - arraypt[1];
+    }
 
     src.delete();
     dst.delete();
