@@ -151,7 +151,12 @@ class game{
 
     updateGameFrame(){
         this.stepGame();    // Run the next timestep of the game
-        drawBG();           // Draw on canvas
+
+        if ((getTimeS() - this.player.start_time) >= 10) {
+            drawBG_Red();  // Red border after 10 seconds
+        } else {
+            drawBG();      // Yellow border for first 10 seconds
+        }
 
         if (this.player.checkObservable(getTimeS())) {  // If the player should be visible on screen
             this.drawCircle(this.player);
@@ -341,7 +346,7 @@ class game{
         alert('here');
         while ((getTimeS() - call_time) < 1 ){ //this.wait_time){
             // this.game_display.fill([255,255,255])
-            drawBG();
+            drawBG()
             console.log(Math.ceil(getTimeS() - call_time));
             var text_center = [gameCanvas.width/2, gameCanvas.height/2 - 50]; //((this.frame_size_tuple[0]/2) + this.frame_offset,(this.frame_size_tuple[1]/2 - 50))
             // this.messageDisplay(f"Attempt {this.player.attempt+1}", text_center, this.textcolor["black"])

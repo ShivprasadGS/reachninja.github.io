@@ -22,6 +22,18 @@ function drawBG() {
     ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+    ctx.strokeStyle = "yellow";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
+}
+
+function drawBG_Red() {
+    ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
 }
 
 function norm(val_og_array){
